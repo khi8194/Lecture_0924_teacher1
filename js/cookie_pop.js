@@ -7,6 +7,14 @@ const ck = modal.querySelector("#ck");
 const isCookie = document.cookie.indexOf("today=done");
 console.log(isCookie); //-1이면 쿠키없음, 그외의 숫자면 쿠키 있음
 
+//isCookie값이 음수면 쿠키없음, 양수면 쿠키있음
+//쿠키가 있으면 새로고침해도 팝업 안보임, 쿠키가 없으면 새로고침시 팝업 보임
+if (isCookie < 0) {
+	modal.style.display = "block";
+} else {
+	modal.style.display = "none";
+}
+
 btnView.addEventListener("click", () => {
 	console.log(document.cookie);
 });
