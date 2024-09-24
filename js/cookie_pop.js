@@ -26,6 +26,8 @@ btnDel.addEventListener("click", () => {
 
 //닫기 버튼 클릭시 모달 안보임 처리
 btnClose.addEventListener("click", () => {
+	//닫기 버튼 클릭시 체크박스가 체크되어 있으면 쿠키 생성
+	if (ck.checked) setCookie("today", "done", 1);
 	modal.style.display = "none";
 });
 
