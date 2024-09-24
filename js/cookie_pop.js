@@ -1,16 +1,11 @@
-/*
-	문자열.indexOf('찾을 문자열') : 전체문자열에서 찾을 문자열이 위치해있는 순서값 반환, 
-	만약 전체문자열에서 찾을 문자열이 없으면 -1을 반환
-
-	1. 모달의 닫기 버튼 클릭시 모달 안보이게 하기
-	2. 체크박스 선택한 뒤 닫기버튼 클릭시 모달 안보이게 함과 동시에 today=done쿠키를 하루만료기한 생성
-	3. 스크립트가 처음 로딩될떄 조건문으로 today=done이라는 쿠키가 있으면 팝업안보이게 처리 없으면 보이게처리
-*/
-
 const [btnView, btnSet, btnDel] = document.querySelectorAll("button");
 const modal = document.querySelector("aside");
 const btnClose = modal.querySelector("button");
 const ck = modal.querySelector("#ck");
+
+//스크립트가 실행되자마자 today=done 쿠키 문자값이 전체 쿠키값에서 있는지 없는지 확인
+const isCookie = document.cookie.indexOf("today=done");
+console.log(isCookie); //-1이면 쿠키없음, 그외의 숫자면 쿠키 있음
 
 btnView.addEventListener("click", () => {
 	console.log(document.cookie);
